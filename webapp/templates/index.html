@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% block content %}
+    <h1>All Recent Hands</h1>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Player</th>
+            <th scope="col">Dealer</th>
+            <th scope="col">Result</th>
+            <th scope="col">Player Balance</th>
+            <th scope="col">Pot</th>
+            
+        </thead>
+        <tbody>
+        {% for hand in hands %}
+            <tr>
+                <td>{{hand.id}}</td>
+                <td>{{hand.date}}</td>
+                <td>{{hand.player_hand}}</td>
+                <td>{{hand.dealer_hand}}</td>
+            {% if hand.result == "Win" %}
+                <td class="table-success">{{hand.result}}</td>
+            {% elif hand.result == "Loss" %}
+                <td class="table-danger">{{hand.result}}</td>
+            {% elif hand.result == "Draw" %}
+                <td class="table-warning>{{hand.result}}</td>
+            {% endif %}
+                <td>{{hand.player_bal}}</td>
+                <td>{{hand.hand_pot}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
