@@ -1,6 +1,6 @@
 {% extends "base.html" %} 
 {% block content %}
-    <h1>All Recent Hands</h1>
+    <h1>Recent Hands</h1>
     <table class="table table-bordered">
         <thead class="thead-light">
             <th scope="col">ID</th>
@@ -17,17 +17,17 @@
             <tr>
                 <td>{{hand.id}}</td>
                 <td>{{hand.date}}</td>
-                <td>{{hand.player_hand}}</td>
-                <td>{{hand.dealer_hand}}</td>
+                <td><h1>{{hand.player_hand}}</h1></td>
+                <td><h1>{{hand.dealer_hand}}</h1></td>
             {% if hand.result == "Win" %}
-                <td class="table-success">{{hand.result}}</td>
+                <td class="table-success"><h4>{{hand.result}}</h4></td>
             {% elif hand.result == "Loss" %}
-                <td class="table-danger">{{hand.result}}</td>
+                <td class="table-danger"><h4>{{hand.result}}</h4></td>
             {% elif hand.result == "Draw" %}
-                <td class="table-warning">{{hand.result}}</td>
+                <td class="table-warning"><h4>{{hand.result}}</h4></td>
             {% endif %}
-                <td>{{hand.player_bal}}</td>
-                <td>{{hand.hand_pot}}</td>
+                <td><h4>${{hand.player_bal}}</h4></td>
+                <td><h4>${{hand.hand_pot}}</h4></td>
             </tr>
         {% endfor %}
         </tbody>
