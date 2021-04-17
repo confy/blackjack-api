@@ -3,7 +3,11 @@ A REST API and simple interface for displaying the hands from my Blackjack Game
 
 https://github.com/confy/blackjack
 
+<<<<<<< HEAD
 ![ui](promoimgdark.jpg)
+=======
+![ui](promoimgnew.jpg)
+>>>>>>> e90fcebc3225c6f4ee349eaad749d0c84be39f55
 
 ### Installation (Windows)
 
